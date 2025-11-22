@@ -63,7 +63,7 @@ stdenv.mkDerivation {
       files = [
         (lib.optionalString buildLV2 "$out/lib/lv2/vitalium.lv2/vitalium.so")
         (lib.optionalString buildVST2 "$out/lib/vst/vitalium.so")
-        (lib.optionalString buildVST3 "$out/lib/vst3/vitalium.vst3/Contents/x86_64-linux/vitalium.so")
+        (lib.optionalString buildVST3 "$out/lib/vst3/vitalium.vst3/Contents/${stdenv.hostPlatform.system}/vitalium.so")
       ];
     in
     lib.optionalString (lib.elem "vitalium" plugins || plugins == [ ]) ''
